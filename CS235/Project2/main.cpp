@@ -21,40 +21,39 @@ int main(){
     assert(stackA->getUniqueCount()==3);
 	
     // test stack B
-	MultiStack* stackB = new MultiStack(*stackA);
-	assert(stackB->multiPop()=='a');
+    MultiStack* stackB = new MultiStack(*stackA);
+    assert(stackB->multiPop()=='a');
     assert(stackB->isEmpty()==false);
-    // these next 3 statements have been fixed
-	assert(stackB->getSize()==3);
+    // these next 3 statements have been fixed by professor 
+    assert(stackB->getSize()==3);
     assert(stackB->getRepeatCounts()==1);
-	assert(stackB->getUniqueCount()==2);
+    assert(stackB->getUniqueCount()==2);
 	
     // test stack A again...
     assert(stackA->isEmpty()==false);	
     assert(stackA->getSize()==6);
     assert(stackA->getRepeatCounts()==3);
-	assert(stackA->getUniqueCount()==3);
+    assert(stackA->getUniqueCount()==3);
 
     // test stack C
     MultiStack* stackC = new MultiStack();
     assert(stackC->isEmpty()==true);
     assert(stackC->getSize()==0);
-	assert(stackC->getRepeatCounts()==0);
-	assert(stackC->getUniqueCount()==0);
+    assert(stackC->getRepeatCounts()==0);
+    assert(stackC->getUniqueCount()==0);
 	
     *stackC = *stackA;
 	
     assert(stackC->multiPop()=='a');
     assert(stackC->isEmpty()==false);
-	assert(stackC->getSize()==3);
+    assert(stackC->getSize()==3);
     assert(stackC->getRepeatCounts()==1);
-	assert(stackC->getUniqueCount()==2);
+    assert(stackC->getUniqueCount()==2);
 	 
     // test stack A again...
-	//I have trouble with this part -- whatever I did to stack C affected Stack A
-	assert(stackA->isEmpty()==false);
-	assert(stackA->getSize()==6);
-	assert(stackA->getRepeatCounts()==3);
+    assert(stackA->isEmpty()==false);
+    assert(stackA->getSize()==6);
+    assert(stackA->getRepeatCounts()==3);
     assert(stackA->getUniqueCount()==3);
 	
     // testing a new Stack X...
