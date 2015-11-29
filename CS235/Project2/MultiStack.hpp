@@ -24,12 +24,11 @@ public:
 	//Copy constructor
 	MultiStack(const MultiStack& anotherMultiStack);
 	
-	//You should implement this properly SHOULD IT BE VIRTUAL?
 	//Destructor
 	virtual ~MultiStack();
 	
-	//You should implement this properly		
-	MultiStack& operator=(const MultiStack& anotherMultiStack); //previouc: MultiStack& operator=(const MultiStack& anotherMultiStack);
+	//Assignment operator	
+	MultiStack& operator=(const MultiStack& anotherMultiStack);
 	
 	//Pushes a character c into the stack. 	
 	void push(char c);
@@ -38,7 +37,7 @@ public:
 	void pop();
 	
 	//Pops off the last character from the stack, and remove all instances of that  character from the entire stack. 
-	//The order of the other characters in the stack should remain intact. Throws an exception if the stack is empty
+	//The order of the other characters in the stack should remain intact. Throws an exception if the stack is empty.
 	char multiPop();
 	
 	//Returns a count of the number of times the last character in the stack appears. Returns 0 if the stack is empty.
