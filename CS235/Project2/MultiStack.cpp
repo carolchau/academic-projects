@@ -37,7 +37,6 @@ MultiStack::MultiStack(const MultiStack& anotherMultiStack){
 
 //Destructor	
 MultiStack::~MultiStack(){
-
 	while (head!= NULL){
 		Node *temp = head; 
 		head = head->link;
@@ -50,7 +49,7 @@ MultiStack::~MultiStack(){
 
 //Assignment operator	
 MultiStack& MultiStack::operator=(const MultiStack& anotherMultiStack){
-	/*
+	
 	//delete whatever is in the left side of the operator
 	while (head!= NULL){
 		Node *temp = head; 
@@ -59,7 +58,6 @@ MultiStack& MultiStack::operator=(const MultiStack& anotherMultiStack){
 		sizeCount --;
 	}
 	head = NULL;
-	*/	
 	
 	sizeCount = anotherMultiStack.sizeCount; 
 	
@@ -188,12 +186,10 @@ bool MultiStack::isEmpty(){
 	}
 }
 	
-
 //Returns the total number of characters in the stack, irrespective of repeats. Returns 0 if the stack is empty.	
 int MultiStack::getSize(){
 	return sizeCount;
 }
-
 
 //Returns the unique number of characters in the stack. 
 //So if the current stack has the following [b a z z z a c ], this should return 4.	
