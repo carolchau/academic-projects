@@ -1,1 +1,1 @@
-# schoolstuff
+# Academic Projects
