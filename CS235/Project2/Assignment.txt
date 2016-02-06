@@ -1,0 +1,40 @@
+“
+Below I am providing you with a specification of a MultiStack container ADT. It is a variation on the Stack ADT. You have to implement this MultiStack using linked nodes. You are explicitly forbidden to use any built-in array-like containers (e.g. native arrays or STL containers of any kind). Don't use any tricks (e.g. use a string to mimic the stack).
+
+You can use the following cpp file to test your implementation … project2_test_main_nov_23.cpp ; you shouldn't have to modify the part inside main() -- unless there is some syntax error. 
+
+MultiStack Specification:
+
+MultiStack()
+Default constructor
+
+MultiStack(const MultiStack& anotherMultiStack) 
+Copy constructor
+
+[assignment operator]
+You should implement this properly
+
+~MultiStack()
+You should implement this properly
+
+void push(char c)
+Pushes a character c into the stack. 
+
+char pop()
+Pops off the last character from the stack and remove it from the stack. Throws an exception if the stack is empty.
+
+char multiPop()
+Pops off the last character from the stack, and remove all instances of that  character from the entire stack. The order of the other characters in the stack should remain intact. Throws an exception if the stack is empty
+
+int getRepeatCounts()
+Returns a count of the number of times the last character in the stack appears. Returns 0 if the stack is empty.
+
+bool isEmpty()
+Returns true if the stack is empty; false otherwise
+
+int getSize()
+Returns the total number of characters in the stack, irrespective of repeats. Returns 0 if the stack is empty.
+
+int getUniqueCount()
+Returns the unique number of characters in the stack. So if the current stack has the following [b a z z z a c ], this should return 4.
+“
