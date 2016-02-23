@@ -19,8 +19,8 @@ template <typename Object>
 class Chain {
 	public: 
 		/**
-   	    * Destructor
-     	*/
+   		 * Destructor
+     		*/
 		~Chain() {
 			delete[] array_;
 		}
@@ -34,19 +34,19 @@ class Chain {
 			size_ = 0; 
 		}
 		
-        /**
-        * Parameterized Constructor
-        * @brief Creates a Chain with size 1, containing val
-        */
+		/**
+		 * Parameterized Constructor
+		 * @brief Creates a Chain with size 1, containing val
+          	 */
 		Chain(const Object & val) {
 			array_ = new Object[1];
 			array_[0] = val; 
 			size_ = 1; 
 		}
 		
-	    /**
-	    * Copy Constructor
-	    */
+	        /**
+		 * Copy Constructor
+		 */
 	  	Chain(const Chain &rhs) {
 			size_ = rhs.size_;
 			array_ = new Object[size_];
@@ -56,10 +56,10 @@ class Chain {
 			}
 	 	}
 		
-	    /**
-	    * Copy Assignment Operator
-	    */
-	    Chain& operator=(const Chain &rhs) {
+		 /**
+		  * Copy Assignment Operator
+		  */
+		 Chain& operator=(const Chain &rhs) {
 				delete[] array_;
 		
 				size_ = rhs.size_;
@@ -70,11 +70,11 @@ class Chain {
 				}
 			
 			return *this;
-	  	}
+	     	 }
 		
-	    /**
-	    * Move Constructor
-	    */
+	    	/**
+		 * Move Constructor
+		 */
 		Chain(Chain &&rhs) {
 			array_ = nullptr;
 			size_ = 0;
@@ -88,9 +88,9 @@ class Chain {
 			rhs.size_ = 0; 
 		}
    	
-	    /**
-	    * Move Assignment Operator
-	    */
+		 /**
+		 * Move Assignment Operator
+		 */
 	 	Chain& operator=(Chain &&rhs) {
 			std::swap(array_, rhs.array_);
 			std::swap(size_, rhs.size_);
@@ -98,21 +98,21 @@ class Chain {
 	 		return *this;
 	 	}
  
-	    /**
-	    * Size
+	    	/**
+	    	* Size
 		* @return the size of the Chain
-	    */
-		//Google Style getter for private variable so use exactly the same name (lower case)
-		//only when you do something simple
+	    	*/
+		//Google Style getter for private variable uses the same name but in lower case
+		//only when you do something simple. but for this time im ignoring it LOL. :P
 	 	int Size() {
 	 		return size_; 
 	 	}
   	
-	    /**
-	    * ReadChain
-	    * @brief Enables user to set the size of the Chain 
-		* 		 and fill it with items
-	    */
+		 /**
+	     	 * ReadChain
+		 * @brief Enables user to set the size of the Chain 
+	 	 * 		 and fill it with items
+	    	 */
 	 	void ReadChain() {
 			Object input; 
 			cout << "Input array size: "; 
@@ -135,10 +135,10 @@ class Chain {
 			}	
 	   	}
 	
-	    /**
-	    * Print()
-	    * @brief Outputs the items in the Chain
-	    */
+		 /**
+		 * Print()
+		 * @brief Outputs the items in the Chain
+		 */
 	 	void Print(ostream & out) const {
 	 		out << "[ ";
 		
@@ -150,21 +150,21 @@ class Chain {
 			out << "]" << endl;
 	 	}
 	
-	    /**
-	    * Output Stream << Operator
-	    * @return the items in the Chain
-	    */
+		 /**
+		  * Output Stream << Operator
+		  * @return the items in the Chain
+		  */
 		 friend ostream& operator<<(ostream &out, const Chain &rhs) {
 			rhs.Print(out);
 		    return out; 
 		 }
 	
-	    /**
-	    * Overloading the + Operators. 
-	    * @brief Concatenates two Chains
-		* @return Chain c, which contains the items from the calling 
-		*		  object's array and the other array
-	    */
+	        /**
+	  	 * Overloading the + Operators. 
+		 * @brief Concatenates two Chains
+	 	 * @return Chain c, which contains the items from the calling 
+		 *		  object's array and the other array
+	    	 */
 		Chain operator+(const Chain &rhs) {
 			int totalSize =  size_ + rhs.size_; 
 		
@@ -183,12 +183,12 @@ class Chain {
 			return c; 	
 		}
 	
-	    /**
-	    * Overloading the + Operators to concatenate with a string 
-	    * @brief Adds an element to the end of the Chain
-		* @return Chain c, which contains the items in the calling
-		*		  object's array and the element
-	    */ 
+	    	/**
+	    	 * Overloading the + Operators to concatenate with a string 
+	    	 * @brief Adds an element to the end of the Chain
+	  	 * @return Chain c, which contains the items in the calling
+		 *		  object's array and the element
+	    	 */ 
 		Chain operator+(const Object &s) {
 			int totalSize =  size_ +1; 
 		
@@ -205,11 +205,11 @@ class Chain {
 			return c; 
 		}
 
-	    /**
-	    * Overloading the [] Subscript Operators. 
-	    * @return the item of the calling Chain object and index i
-		* 		  throws an exception if the array cannot have that index       
-	    */
+	    	/**
+	    	 * Overloading the [] Subscript Operators. 
+	    	 * @return the item of the calling Chain object and index i
+	  	 * 		  throws an exception if the array cannot have that index       
+	    	 */
 		Object& operator[](const int i) {
 			//if index i is out of range, throw and exception
 			try {
